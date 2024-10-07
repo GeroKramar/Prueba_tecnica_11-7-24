@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm"
 import { User } from "../entitie/user"
 
-import { Credential } from "../entitie/credential"
+import { Credential } from "../entitie/characters_models"
 import { Appointment } from "../entitie/appointment"
 
 

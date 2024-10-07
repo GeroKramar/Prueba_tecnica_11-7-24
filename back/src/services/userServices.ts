@@ -4,7 +4,7 @@ import { AppDataSource } from "../config/data-source"
 import { User } from "../entitie/user"
 import UserDto from "../dtos/UserDto"
 import { createCredentialService } from "./credentialServices"
-import { Credential } from "../entitie/credential"
+import { Credential } from "../entitie/characters_models"
 
 
 

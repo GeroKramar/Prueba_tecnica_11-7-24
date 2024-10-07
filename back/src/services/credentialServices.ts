@@ -1,5 +1,5 @@
 import { AppDataSource } from "../config/data-source"
-import { Credential } from "../entitie/credential"
+import { Credential } from "../entitie/characters_models"
 import CredentialDto from "../dtos/CredentialDto"
 
 export const createCredentialService = async (userData: CredentialDto): Promise<number> => {
