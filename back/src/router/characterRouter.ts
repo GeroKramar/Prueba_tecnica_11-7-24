@@ -1,10 +1,13 @@
 import { Router } from "express";
-import { syncCharacters } from "../controllers/characterController";
+import { createCharacterController, deleteCharacterController, getAllCharactersController, getCharacterByIdController, syncCharacters, updateCharacterController } from "../controllers/characterController";
 
 const CharacterRouter = Router();
 
+CharacterRouter.get("/", getAllCharactersController)
+CharacterRouter.get("/:id", getCharacterByIdController)
 CharacterRouter.post("/sync", syncCharacters)
-// turnRouter.get("/:id", getAppointmentByIdController)
-// turnRouter.post("/schedule" , createAppointmentIdController)
-// turnRouter.put("/cancel/:id", cancelAppointmentByIdController)
+CharacterRouter.post("/create", createCharacterController)
+CharacterRouter.delete("/delete/:id", deleteCharacterController)
+CharacterRouter.put("/update/:id", updateCharacterController)
+
 export default CharacterRouter;
