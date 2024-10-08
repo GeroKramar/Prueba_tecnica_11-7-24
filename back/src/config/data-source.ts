@@ -1,21 +1,8 @@
-import { DataSource } from "typeorm"
-import { User } from "../entitie/user"
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-import { Credential } from "../entitie/characters_models"
-import { Appointment } from "../entitie/appointment"
+dotenv.config();
 
-
-export const AppDataSource = new DataSource({
-    type: "postgres",
-    host: "localhost",
-    port: 5432,
-    username: "postgres",
-    password: "root",
-    database: "dbmodulo3",
-    //  dropSchema: true,
-    synchronize: true,
-    logging: false,
-    entities: [User, Appointment, Credential],
-    subscribers: [],
-    migrations: [],
-})
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/pruebaDb')
+  .then(() => console.log('Conectado a MongoDB'))
+  .catch((err) => console.error('Error al conectar a MongoDB:', err));
